@@ -62,7 +62,7 @@ p {
   border: none;
   color: white;
   padding: 1em 2em;
-  text-transform: uppercase;
+  text-transform: uppercase !important;
   font-weight: bold;
   margin: 15px auto;
   display: block;
