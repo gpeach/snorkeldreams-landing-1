@@ -17,22 +17,165 @@
   <link rel="icon" href="/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icon.png">
 
-  <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#fafafa">
+<!--BEGIN header injection-->
 
-  <script src="js/header_injection.js"></script>
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '226632703841178');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+                 src="https://www.facebook.com/tr?id=226632703841178&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Inter:wght@100..900&family=Madimi+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100..900&display=swap')
+  </style>
 
+  <!--END header injection-->
 </head>
 
 <body>
-
-  <!-- Add your site or application content here -->
   <p>Landing page code repo</p>
   <a href="" class="sqs-block-button-element--medium sqs-button-element--primary sqs-block-button-element" data-initialized="true" id="yui_3_17_2_1_1710710705720_463">
     Learn more
   </a>
-  <script src="js/footer_injection.js"></script>
+
+  <!--BEGIN footer injection-->
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var htmlContent = `
+<div class='overlay'></div>
+<div id='mc_embed_shell'>
+  <div id='mc_embed_signup'>
+    <form action='https://snorkeldreams.us21.list-manage.com/subscribe/post-json?u=64d3a2c60b75473eccc67dee4&id=4c4035425a&f_id=0029f5e6f0&c=?' method='poat' id='mc-embedded-subscribe-form' name='mc-embedded-subscribe-form' class='validate' target='_self' novalidate>
+      <div id='mc_embed_signup_scroll'>
+        <h2>Get your Snorkel Guide!</h2>
+        <p>It's free!</p> <!-- Text under headline -->
+        <div class='mc-field-group'>
+          <input type='email' name='EMAIL' class='required email' id='mce-EMAIL' required value='' placeholder='Email Address'>
+        </div>
+        <div class='mc-field-group'>
+          <input type='text' name='FNAME' class='text' id='mce-FNAME' value='' placeholder='First Name'>
+        </div>
+        <div class='clear'>
+          <input type='submit' name='subscribe' id='mc-embedded-subscribe' class='button' value='Subscribe'>
+        </div>
+      </div>
+    </form>
+    <div id='mc_embed_close'>&#x2715;</div> <!-- Close button -->
+  </div>
+</div>`;
+
+      var bodyTag = document.body;
+      bodyTag.insertAdjacentHTML('afterbegin', htmlContent);
+
+// Rest of your code that depends on htmlContent should also go here
+// For example:
+      var buttons = document.querySelectorAll('.sqs-block-button-element--medium.sqs-button-element--primary.sqs-block-button-element');
+      const overlay = document.querySelector('.overlay');
+      const modal = document.getElementById('mc_embed_signup');
+
+// You can trigger this function on a specific event, e.g., button click
+      function showModal() {
+        document.body.style.overflow = 'hidden';
+        overlay.classList.add('active');
+        modal.classList.add('active');
+      }
+
+// You can trigger this function on a specific event, e.g., button click
+      function hideModal() {
+        document.body.style.overflow = '';
+        overlay.classList.remove('active');
+        modal.classList.remove('active');
+      }
+
+// Loop through each button and attach a click event listener
+      buttons.forEach(function(button) {
+        button.addEventListener('click', function(event) {
+          event.preventDefault(); // Prevents the default button action
+          showModal();
+        });
+      });
+
+
+      document.getElementById('mc_embed_close').addEventListener('click', function() {
+        event.preventDefault(); // Prevents the default button action
+        hideModal();
+        //var form = document.getElementById('mc_embed_signup');
+        //form.style.transition = 'all 0.5s ease-in-out';
+        //form.style.transform = 'translateY(-100%)'; // Adjust as needed for your layout
+      });
+
+
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Make the callback function available globally
+      window.jsonpCallback = jsonpCallback;
+      var form = document.getElementById('mc-embedded-subscribe-form');
+      var emailInput = document.getElementById('mce-EMAIL');
+      var firstNameInput = document.getElementById('mce-FNAME');
+      var submitButton = document.getElementById('mc-embedded-subscribe');
+
+      function validateEmail(email) {
+        var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Simple email regex for demonstration
+        return re.test(String(email).toLowerCase());
+      }
+
+      function updateFormState(event) {
+        event.preventDefault(); // Prevent the form from submitting
+
+        var isEmailValid = emailInput.value !== '' && validateEmail(emailInput.value);
+        var isFirstNameValid = firstNameInput.value !== '';
+
+        // Update field styles based on validation
+        emailInput.style.border = isEmailValid ? '' : '1px solid red';
+        firstNameInput.style.border = isFirstNameValid ? '' : '1px solid red';
+
+        // Only submit the form if both fields are valid
+        if (isEmailValid && isFirstNameValid) {
+          //document.getElementById('mc-embedded-subscribe-form').submit();
+          var formData = new FormData(form);
+          var params = new URLSearchParams(formData).toString();
+          var jsonpUrl = `${form.action}&${params}&c=?`; // Append '&c=?' for JSONP callback
+
+          // JSONP request
+          var script = document.createElement('script');
+          script.src = jsonpUrl;
+          document.body.appendChild(script);
+        }
+      }
+
+      submitButton.addEventListener('click', updateFormState);
+    });
+
+    function jsonpCallback(data) {
+      if (data.result === 'success') {
+        // Handle success
+        alert('Thank you for subscribing!');
+      } else {
+        // Handle error
+        alert('Subscription failed: ' + data.msg);
+      }
+    }
+
+
+  </script>
+
+  <!--END footer injection-->
 </body>
 
 </html>
