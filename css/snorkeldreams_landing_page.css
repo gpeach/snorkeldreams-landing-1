@@ -45,13 +45,15 @@ p {
 }
 
 #mc_embed_signup .mc-field-group {
-  padding: 10px 5%; /* Responsive padding */
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .mc-field-group input {
   width: 100%; /* Full width of parent */
-  padding: 1em;
-  margin-bottom: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
   border: 1px solid #ccc;
 }
 
@@ -86,6 +88,7 @@ p {
     margin-top: 10vh; /* Adjust to center modal more appropriately */
   }
 }
+
 #mc_embed_close {
   position: absolute;
   padding: 8px;
@@ -144,8 +147,7 @@ p {
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
-  font-variation-settings:
-    "slnt" 0;
+  font-variation-settings: "slnt" 0;
   color: white;
 }
 
@@ -154,8 +156,7 @@ p {
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
-  font-variation-settings:
-    "slnt" 0;
+  font-variation-settings: "slnt" 0;
   color: white;
 }
 
@@ -164,14 +165,14 @@ p {
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
-  font-variation-settings:
-    "slnt" 0;
+  font-variation-settings: "slnt" 0;
   color: white;
 }
 
 section[data-section-id="65f357694eb09b342fa30634"] .section-background {
   background-color: #0C6E93;
 }
+
 section[data-section-id="65f3592948f3575fa0c62698"] .section-background {
   background-color: #0E99D0;
 }
@@ -180,11 +181,11 @@ section[data-section-id="65f356b0cc21e832172a6d26"] .section-background {
   background-color: #fff;
 }
 
-section[data-section-id="64a8c101a846cd50ddc460ea"]{
+section[data-section-id="64a8c101a846cd50ddc460ea"] {
   display: none;
 }
 
-section[data-section-id="65f356b0cc21e832172a6d26"] .section-background{
+section[data-section-id="65f356b0cc21e832172a6d26"] .section-background {
   background-color: #94C1BA;
 }
 
@@ -228,8 +229,7 @@ html, body {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-variation-settings:
-    "slnt" 0;
+  font-variation-settings: "slnt" 0;
 }
 
 .poppins-thin {
@@ -354,4 +354,73 @@ html, body {
 
 #mc-message p.error {
   background-color: #f44336; /* Red */
+}
+
+/* Overlay covering the entire screen */
+.overlay.active {
+  display: block; /* Show overlay */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999; /* Ensure it's below the modal content but above other content */
+  overflow-y: auto; /* Allow scrolling within the overlay */
+}
+
+/* Full-screen modal adjustments */
+@media screen and (max-width: 599px), screen and (max-height: 599px) {
+  #mc_embed_signup {
+    display: none;
+  }
+
+  #mc_embed_signup.active {
+    max-width: 100%;
+    display: block;
+    margin-top: 0;
+    position: fixed;
+    top: 0;
+    left: 0; /* Align to the far left */
+    transform: none; /* Remove any transform */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height, ensuring full screen coverage */
+    overflow-y: auto; /* Enable scrolling if content exceeds screen height */
+    padding: 20px; /* Appropriate padding */
+    box-sizing: border-box; /* Include padding in width/height calculations */
+    z-index: 1000; /* Above the overlay */
+  }
+
+  /* Ensuring the close button is visible and appropriately positioned */
+  #mc_embed_close {
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    z-index: 1001; /* Ensure it's above the modal content */
+    /* Styling for visibility */
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  /* Ensure input and button are appropriately styled for mobile */
+  #mc_embed_signup .button {
+    padding: 10px; /* Adjust for touch friendliness */
+    font-size: 16px; /* Readability on small screens */
+    width: auto; /* Ensure full width within container */
+  }
+
+
+  /* Ensure input and button are appropriately styled for mobile */
+  .mc-field-group input {
+    padding: 10px; /* Adjust for touch friendliness */
+    font-size: 16px; /* Readability on small screens */
+    width: 100%; /* Ensure full width within container */
+  }
 }
