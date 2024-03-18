@@ -1,3 +1,40 @@
+/*landing page custom checkmark ul list*/
+#block-15531a44e8e775199138 ul,
+ul.custom-checkmark {
+  list-style-type: none !important; /* Remove default bullets */
+  list-style: none !important; /* Remove default bullets */
+}
+
+#block-15531a44e8e775199138 ul[data-rte-list] li>*:first-child::before{
+  padding-right: 0px;
+  content: "";
+}
+
+#block-15531a44e8e775199138 ul li,
+ul.custom-checkmark li {
+  font-family: 'Inter', sans-serif;
+  color: white;
+  display: flex;
+  align-items: start;
+}
+
+#block-15531a44e8e775199138 ul li p,
+ul.custom-checkmark li p{
+  font-family: 'Inter', sans-serif;
+  color: white;
+  display: inline-block;
+  vertical-align: top;
+}
+
+#block-15531a44e8e775199138 ul li::before,
+ul.custom-checkmark li::before {
+  content: '✓'; /* Checkmark symbol */
+  color: yellow; /* Checkmark color */
+  margin-right: 8px; /* Space between checkmark and text */
+  margin-top: 0.5rem;
+  font-size: 1.5rem; /* Checkmark size */
+}
+
 /*modal signup form base styles*/
 #mc_embed_signup {
   font-family: 'Inter', sans-serif; /* Default font */
@@ -65,6 +102,8 @@
   border: none;
   color: white;
   padding: 1em 2em;
+  width: auto;
+  max-width: 700px;
   text-transform: uppercase !important;
   font-weight: bold;
   margin: 15px auto;
@@ -72,6 +111,7 @@
   cursor: pointer;
   font-family: 'Inter', sans-serif !important;
   font-size: 1em;
+  text-align: center;
 }
 
 /*bottom margin for 1st lp button*/
@@ -114,7 +154,8 @@
 }
 
 /*landing page text block styling*/
-#block-15531a44e8e775199138 h4 {
+#block-15531a44e8e775199138 h4,
+#block-yui_3_17_2_1_1710743697212_20728 h4 {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
