@@ -67,26 +67,8 @@ p {
   margin: 15px auto;
   display: block;
   cursor: pointer;
-  font-size: 1em; /* Scalable font size */
-}
-
-@media (max-width: 600px) {
-  #mc_embed_signup {
-    width: 95%; /* More width for smaller screens */
-    padding: 1em; /* Less padding for tighter spaces */
-  }
-
-  #mc_embed_signup h2 {
-    font-size: 1.5em; /* Smaller font size for smaller screens */
-  }
-
-  .mc-field-group input, #mc_embed_signup .button, .sqs-block-button-element--medium.sqs-button-element--primary.sqs-block-button-element {
-    padding: 0.75em 1.5em; /* Adjust padding */
-  }
-
-  #mc_embed_signup.active {
-    margin-top: 10vh; /* Adjust to center modal more appropriately */
-  }
+  font-family: 'Inter', sans-serif !important;
+  font-size: 1em;
 }
 
 #mc_embed_close {
@@ -161,7 +143,7 @@ p {
 }
 
 #block-15531a44e8e775199138 a {
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", sans-serif !important;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
@@ -199,145 +181,10 @@ html, body {
   max-width: 100% !important;
 }
 
-.alfa-slab one-regular {
-  font-family: "Alfa Slab One", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-/* <uniquifier>: Use a unique and descriptive class name */
-/* <weight>: Use a value from 100 to 900 */
-
-.roboto-slab-sd {
-  font-family: "Roboto Slab", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.madimi-one-regular {
-  font-family: "Madimi One", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-/* <uniquifier>: Use a unique and descriptive class name */
-/* <weight>: Use a value from 100 to 900 */
-
-.inter-sd {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings: "slnt" 0;
-}
-
-.poppins-thin {
-  font-family: "Poppins", sans-serif;
-  font-weight: 100;
-  font-style: normal;
-}
-
-.poppins-extralight {
-  font-family: "Poppins", sans-serif;
-  font-weight: 200;
-  font-style: normal;
-}
-
-.poppins-light {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-}
-
-.poppins-regular {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.poppins-medium {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-}
-
-.poppins-semibold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-}
-
-.poppins-bold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.poppins-extrabold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  font-style: normal;
-}
-
-.poppins-black {
-  font-family: "Poppins", sans-serif;
-  font-weight: 900;
-  font-style: normal;
-}
-
-.poppins-thin-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 100;
-  font-style: italic;
-}
-
-.poppins-extralight-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 200;
-  font-style: italic;
-}
-
-.poppins-light-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  font-style: italic;
-}
-
-.poppins-regular-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.poppins-medium-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-style: italic;
-}
-
-.poppins-semibold-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: italic;
-}
-
-.poppins-bold-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-style: italic;
-}
-
-.poppins-extrabold-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  font-style: italic;
-}
-
-.poppins-black-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 900;
-  font-style: italic;
+.no-scroll{
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
 /*modal message styling*/
@@ -414,6 +261,7 @@ html, body {
     padding: 10px; /* Adjust for touch friendliness */
     font-size: 16px; /* Readability on small screens */
     width: auto; /* Ensure full width within container */
+    font-family: 'Inter', sans-serif !important;
   }
 
 

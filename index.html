@@ -124,6 +124,7 @@
     buttons.forEach(function (button) {
       button.addEventListener('click', function (event) {
         event.preventDefault();
+        document.body.classList.add('no-scroll');
         showModal();
       });
     });
@@ -131,6 +132,7 @@
     // Close modal on close button click
     document.getElementById('mc_embed_close').addEventListener('click', function (event) {
       event.preventDefault();
+      document.body.classList.remove('no-scroll');
       hideModal();
     });
 
